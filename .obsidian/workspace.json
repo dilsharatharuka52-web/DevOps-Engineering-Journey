@@ -1,0 +1,234 @@
+{
+  "main": {
+    "id": "13883450939f915a",
+    "type": "split",
+    "children": [
+      {
+        "id": "73042eda972d1008",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dea7ac347ed8941e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/04 - Continuous Integration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04 - Continuous Integration"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "91ea550f3ac9302b",
+    "type": "split",
+    "children": [
+      {
+        "id": "d30eb5b51ff0537a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2055f13dd7721687",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "001ea1f6ae93ad43",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "05a2b77e92450c0f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "right": {
+    "id": "4f133e68e3cd7648",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ba32eef28ce6693",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "372721cfe6f0d675",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/06-Behavior Driven Development (BDD).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "97142b02bc5a6cdb",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/06-Behavior Driven Development (BDD).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "2f4454bb68f8e160",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7f64906ea80c5f15",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "c2f6efdb681456bb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/06-Behavior Driven Development (BDD).md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "workspaces:Manage workspace layouts": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "dea7ac347ed8941e",
+  "lastOpenFiles": [
+    "09-Attachments/Pasted image 20261121095745.png",
+    "09-Attachments/Pasted image 20261121094940.png",
+    "01-Courses/Udemy_linux/06-Listing File and Understanding ls output.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/04 - Continuous Integration.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/IBM DevOps Professional Certificate.md",
+    "09-Attachments/Pasted image 20261113163610.png",
+    "09-Attachments/Pasted image 20261113163232.png",
+    "09-Attachments/Pasted image 20261113163217.png",
+    "09-Attachments/Pasted image 20261113103720.png",
+    "09-Attachments/Pasted image 20261112203528.png",
+    "01-Courses/Udemy_linux/05-Basic commands.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/03-Infrastructure as Code.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/02-Required DevOps Behaviors.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/01-Taylorism and Working in Silos.md",
+    "09-Attachments/Pasted image 20261110194455.png",
+    "09-Attachments/Pasted image 20261110190426.png",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/08-Designing for Failure.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/Summary note.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/07-Cloud Native Microservices.md",
+    "09-Attachments/Pasted image 20261110182231.png",
+    "09-Attachments/Pasted image 20261110181928.png",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/06-Behavior Driven Development (BDD).md",
+    "01-Courses/Udemy_linux/04-What is the shell.md",
+    "01-Courses/Udemy_linux/03-Common Directories in linux.md",
+    "01-Courses/Udemy_linux/00-Course overview.md",
+    "01-Courses/Udemy_linux/01- Background and history of Linux.md",
+    "01-Courses/Udemy_linux",
+    "Untitled",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/05-Test Driven Development(TDD).md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/04-Minimum Viable Product.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/03-Working in Small Batches.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/02-Git Repository Guidelines.md",
+    "00-Dashboard/Untitled.md",
+    "00-Dashboard/Untitled.base",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/sa.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/01-Social Coding Principles.md",
+    "Untitled.canvas",
+    "00-Dashboard/Home.md"
+  ]
+}
