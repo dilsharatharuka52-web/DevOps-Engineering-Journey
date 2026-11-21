@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01-Courses/IBM-DevOps-Professional-Certificate/04-Organizing for DevOps/01-Organizational Impact of DevOps.md",
+                "file": "01-Courses/IBM-DevOps-Professional-Certificate/04-Organizing for DevOps/02-There is No DevOps Team.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "01-Organizational Impact of DevOps"
+              "title": "02-There is No DevOps Team"
             }
           }
         ]
@@ -192,10 +192,15 @@
   },
   "active": "dea7ac347ed8941e",
   "lastOpenFiles": [
+    "09-Attachments/Pasted image 20261121163641.png",
+    "09-Attachments/Pasted image 20261121163622.png",
+    "09-Attachments/Pasted image 20261121163535.png",
+    "09-Attachments/Pasted image 20261121163531.png",
+    "01-Courses/IBM-DevOps-Professional-Certificate/04-Organizing for DevOps/01-Organizational Impact of DevOps.md",
+    "01-Courses/IBM-DevOps-Professional-Certificate/04-Organizing for DevOps/02-There is No DevOps Team.md",
     "09-Attachments/Pasted image 20261121162842.png",
     "09-Attachments/Pasted image 20261121162754.png",
     "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/05-Continuous Delivery.md",
-    "01-Courses/IBM-DevOps-Professional-Certificate/04-Organizing for DevOps/01-Organizational Impact of DevOps.md",
     "09-Attachments/Pasted image 20261121112049.png",
     "09-Attachments/Pasted image 20261121111637.png",
     "09-Attachments/Pasted image 20261121111523.png",
@@ -204,10 +209,6 @@
     "09-Attachments/Pasted image 20261121094940.png",
     "01-Courses/Udemy_linux/06-Listing File and Understanding ls output.md",
     "01-Courses/IBM-DevOps-Professional-Certificate/IBM DevOps Professional Certificate.md",
-    "09-Attachments/Pasted image 20261113163610.png",
-    "09-Attachments/Pasted image 20261113163232.png",
-    "09-Attachments/Pasted image 20261113163217.png",
-    "09-Attachments/Pasted image 20261113103720.png",
     "01-Courses/Udemy_linux/05-Basic commands.md",
     "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/03-Infrastructure as Code.md",
     "01-Courses/IBM-DevOps-Professional-Certificate/03-working DevOps/02-Required DevOps Behaviors.md",
@@ -230,7 +231,6 @@
     "00-Dashboard/Untitled.base",
     "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/sa.md",
     "01-Courses/IBM-DevOps-Professional-Certificate/02-Thnking Devops/01-Social Coding Principles.md",
-    "Untitled.canvas",
-    "00-Dashboard/Home.md"
+    "Untitled.canvas"
   ]
 }
