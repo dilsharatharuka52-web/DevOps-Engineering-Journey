@@ -690,4 +690,620 @@ These concepts are useful for Linux administration, automation, shell scripting 
 **Practice every command yourself. Understanding the command is more important than memorizing it.**
 
 ---
-##Pro
+# Linux Study Notes: Processes, Job Control & Cron Scheduling
+
+## 1. What is a Process?
+
+A **process** is a program that is currently running on a computer.
+
+Examples:
+
+- Opening Google Chrome
+    
+- Running a Python program
+    
+- Running an Apache web server
+    
+- Running a Linux command
+    
+
+**Sinhala:** Process එකක් කියන්නේ computer එකේ දැනට ක්‍රියාත්මක වෙන program එකක්.
+
+### Important Process Terms
+
+|Term|Meaning|
+|---|---|
+|PID|Process ID – unique number given to a process|
+|PPID|Parent Process ID – ID of the parent process|
+|Process|A running program|
+|Parent Process|The process that starts another process|
+
+Example:
+
+```
+sleep 100 &
+```
+
+This starts a background process. Linux assigns it a PID.
+
+## 2. Monitoring Processes
+
+Linux provides several commands to check running processes.
+
+### 2.1 `ps` Command
+
+`ps` means **Process Status**.
+
+It displays information about running processes.
+
+|Command|Description|
+|---|---|
+|`ps`|Show processes in the current terminal|
+|`ps -e`|Show all running processes|
+|`ps -f`|Show full-format information|
+|`ps -ef`|Show all processes with full details|
+|`ps -eH`|Show processes in a hierarchy|
+|`ps -e --forest`|Show processes in a tree structure|
+|`ps -u username`|Show processes owned by a specific user|
+|`ps -p 1500`|Show the process with PID 1500|
+
+Example:
+
+```
+ps -ef
+```
+
+Common output columns:
+
+|Column|Meaning|
+|---|---|
+|UID|User who owns the process|
+|PID|Process ID|
+|PPID|Parent Process ID|
+|C|CPU usage information|
+|STIME|Process start time|
+|TTY|Terminal associated with the process|
+|TIME|CPU time used|
+|CMD|Command that started the process|
+
+**Sinhala:** `ps -ef` මගින් computer එකේ ක්‍රියාත්මක වන processes සහ ඒවාට අදාළ විස්තර බලන්න පුළුවන්.
+
+### 2.2 `pstree`
+
+Displays processes in a tree structure.
+
+```
+pstree
+```
+
+**Sinhala:** Parent process සහ child processes ගසක ආකාරයට පෙන්වයි.
+
+### 2.3 `top`
+
+Displays live process information.
+
+```
+top
+```
+
+You can see:
+
+- CPU usage
+    
+- Memory usage
+    
+- Running processes
+    
+- Process IDs
+    
+
+Press `q` to quit.
+
+### 2.4 `htop`
+
+A more user-friendly interactive process monitoring tool.
+
+```
+htop
+```
+
+If it is not installed:
+
+```
+sudo apt update
+sudo apt install htop
+```
+
+**Remember:**
+
+- `ps` = Process information snapshot
+    
+- `top` = Live process monitoring
+    
+- `htop` = Interactive process monitoring
+    
+- `pstree` = Process hierarchy
+    
+
+---
+
+## 3. Job Control
+
+Job control allows us to manage processes running in a terminal.
+
+There are two main types of jobs.
+
+### 3.1 Foreground Process
+
+A foreground process runs directly in the terminal.
+
+Example:
+
+```
+ping google.com
+```
+
+The terminal stays busy while the command runs.
+
+To stop it, press:
+
+```
+Ctrl + C
+```
+
+**Sinhala:** Foreground process එකක් ක්‍රියාත්මක වන විට terminal එක ඒ command එකට වෙන් වෙනවා. වෙනත් command එකක් run කරන්න බැහැ.
+
+### 3.2 Background Process
+
+A background process runs without keeping the terminal busy.
+
+Use `&` at the end of a command.
+
+Example:
+
+```
+ping google.com &
+```
+
+Now you can enter other commands in the terminal.
+
+**Sinhala:** Background process එකක් terminal එකේ පිටුපසින් ක්‍රියාත්මක වෙනවා. ඒ අතරතුර වෙනත් commands run කරන්න පුළුවන්.
+
+### 3.3 Important Job Control Commands
+
+|Command|Description|
+|---|---|
+|`command &`|Start a command in the background|
+|`jobs`|Display jobs in the current shell|
+|`jobs -l`|Display jobs with process IDs|
+|`Ctrl + C`|Interrupt the foreground process|
+|`Ctrl + Z`|Suspend the foreground process|
+|`bg`|Resume a suspended job in the background|
+|`fg`|Bring a job to the foreground|
+|`bg %1`|Resume job number 1 in the background|
+|`fg %1`|Bring job number 1 to the foreground|
+
+### 3.4 Practical Example
+
+**Step 1: Start a process**
+
+```
+sleep 300
+```
+
+This command waits for 300 seconds.
+
+**Step 2: Suspend the process**
+
+Press:
+
+```
+Ctrl + Z
+```
+
+**Step 3: Check jobs**
+
+```
+jobs
+```
+
+**Step 4: Resume in the background**
+
+```
+bg
+```
+
+**Step 5: Bring it to the foreground**
+
+```
+fg
+```
+
+**Step 6: Stop the process**
+
+Press:
+
+```
+Ctrl + C
+```
+
+### Difference Between Ctrl+C and Ctrl+Z
+
+|Shortcut|Action|
+|---|---|
+|Ctrl + C|Interrupts the foreground process|
+|Ctrl + Z|Suspends the foreground process|
+
+Remember:
+
+- Ctrl+C = Stop the command.
+    
+- Ctrl+Z = Pause the command.
+    
+
+---
+
+## 4. Killing Processes
+
+Sometimes a process stops responding. We can terminate it using the `kill` command.
+
+### Syntax
+
+```
+kill PID
+```
+
+Example:
+
+```
+kill 1500
+```
+
+This sends the default signal, SIGTERM (15), asking the process to terminate gracefully.
+
+### Important Kill Commands
+
+|Command|Meaning|
+|---|---|
+|`kill 1500`|Send default SIGTERM|
+|`kill -15 1500`|Send SIGTERM|
+|`kill -9 1500`|Forcefully terminate the process|
+|`kill -STOP 1500`|Stop/suspend the process|
+|`kill -CONT 1500`|Continue a stopped process|
+
+### Important Signals
+
+|Signal|Number|Purpose|
+|---|---|---|
+|SIGTERM|15|Request graceful termination|
+|SIGKILL|9|Force termination|
+|SIGSTOP|19 on common Linux architectures|Stop a process|
+|SIGCONT|18 on common Linux architectures|Continue a stopped process|
+
+**Important:** Use `kill -9` only when necessary. It does not give the process a chance to clean up.
+
+**Sinhala:** `kill` command එකෙන් process එකක් terminate කරන්න පුළුවන්. `kill -9` කියන්නේ බලහත්කාරයෙන් process එක නවත්වන එක.
+
+---
+
+## 5. Cron Jobs
+
+### 5.1 What is Cron?
+
+Cron is a Linux service used to schedule tasks automatically at specific times.
+
+Examples:
+
+- Run a backup every day.
+    
+- Delete temporary files every week.
+    
+- Run a script every hour.
+    
+- Check a server regularly.
+    
+
+**Sinhala:** Cron කියන්නේ නියමිත වේලාවක හෝ දිනයක tasks ස්වයංක්‍රීයව run කරන්න භාවිතා කරන Linux scheduler එකක්.
+
+### 5.2 What is Crontab?
+
+Crontab is used to create and manage scheduled tasks.
+
+Important commands:
+
+|Command|Description|
+|---|---|
+|`crontab -e`|Edit scheduled tasks|
+|`crontab -l`|List scheduled tasks|
+|`crontab -r`|Remove all scheduled tasks for the current user|
+|`crontab -u username -l`|List another user's crontab (with suitable permissions)|
+
+**Warning:** `crontab -r` removes all cron entries for that user. Use it carefully.
+
+### 5.3 Cron Syntax
+
+A cron schedule contains five time fields.
+
+```
+* * * * * command
+│ │ │ │ │
+│ │ │ │ └── Day of week
+│ │ │ └──── Month
+│ │ └────── Day of month
+│ └──────── Hour
+└────────── Minute
+```
+
+|Field|Allowed values|
+|---|---|
+|Minute|0–59|
+|Hour|0–23|
+|Day of month|1–31|
+|Month|1–12|
+|Day of week|0–7 (0 and 7 mean Sunday)|
+
+### 5.4 Cron Special Symbols
+
+|Symbol|Meaning|Example|
+|---|---|---|
+|`*`|Every value|`* * * * *`|
+|`,`|Multiple values|`0 8,17 * * *`|
+|`-`|Range|`0 8-17 * * *`|
+|`/`|Interval|`*/5 * * * *`|
+
+### 5.5 Common Cron Examples
+
+|Cron expression|Meaning|
+|---|---|
+|`* * * * *`|Every minute|
+|`*/5 * * * *`|Every 5 minutes|
+|`0 * * * *`|Every hour|
+|`0 2 * * *`|Every day at 2:00 AM|
+|`30 8 * * *`|Every day at 8:30 AM|
+|`0 8 * * 0`|Every Sunday at 8:00 AM|
+|`0 0 1 * *`|First day of every month at midnight|
+|`0 9 * * 1-5`|Monday to Friday at 9:00 AM|
+
+**Important correction:**
+
+```
+02 * * * *
+```
+
+This means every hour at 2 minutes past the hour.
+
+It does NOT mean every day at 2:00 AM.
+
+Correct expression for daily 2:00 AM:
+
+```
+0 2 * * *
+```
+
+---
+
+## 6. Output Redirection
+
+Output redirection allows us to save command output into files.
+
+Linux has three standard streams:
+
+|Stream|Number|Meaning|
+|---|---|---|
+|stdin|0|Standard input|
+|stdout|1|Standard output|
+|stderr|2|Standard error|
+
+### 6.1 `>` Overwrite Output
+
+```
+echo "Hello Linux" > output.txt
+```
+
+Creates a file or overwrites its existing content.
+
+### 6.2 `>>` Append Output
+
+```
+echo "New line" >> output.txt
+```
+
+Adds new content to the end of the file.
+
+### 6.3 Redirect Error Output
+
+```
+ls /wrong-folder 2> error.log
+```
+
+Saves error messages in `error.log`.
+
+### 6.4 Redirect Both Output and Errors
+
+```
+ls /home > output.log 2>&1
+```
+
+Meaning:
+
+- `>` sends standard output to `output.log`.
+    
+- `2>&1` sends standard error to the same destination as standard output.
+    
+
+### 6.5 Practical Backup Example
+
+```
+/root/backupdb > /tmp/db.log 2>&1
+```
+
+This runs the backup script and saves both normal output and error messages in `/tmp/db.log`.
+
+To append instead of overwrite:
+
+```
+/root/backupdb >> /tmp/db.log 2>&1
+```
+
+### Difference Between > and >>
+
+|Operator|Action|
+|---|---|
+|`>`|Overwrite|
+|`>>`|Append|
+|`2>`|Redirect errors|
+|`2>&1`|Redirect errors to the same destination as standard output|
+
+---
+
+## 7. Practical Lab: Create a Cron Job
+
+Let's create a simple cron job to test whether cron works.
+
+### Step 1: Open crontab
+
+```
+crontab -e
+```
+
+### Step 2: Add this line
+
+```
+*/5 * * * * echo "Cron is working" >> /tmp/cron-test.log 2>&1
+```
+
+This runs every 5 minutes and adds a message to the log file.
+
+### Step 3: Check your cron jobs
+
+```
+crontab -l
+```
+
+### Step 4: Check the output
+
+```
+cat /tmp/cron-test.log
+```
+
+Wait up to five minutes for the first scheduled execution.
+
+### Step 5: Remove the test job
+
+Open the crontab again:
+
+```
+crontab -e
+```
+
+Delete the test line and save.
+
+Note: Cron jobs belonging to different users are separate. For example, use `sudo crontab -e` to edit root's crontab. A script stored under `/root` normally needs to run with root permissions.
+
+---
+
+## 8. Quick Revision Table
+
+|Topic|Important command|
+|---|---|
+|View processes|`ps -ef`|
+|Live monitoring|`top`|
+|Interactive monitoring|`htop`|
+|Process tree|`pstree`|
+|Start background job|`command &`|
+|Show jobs|`jobs`|
+|Suspend foreground job|`Ctrl + Z`|
+|Resume in background|`bg`|
+|Bring to foreground|`fg`|
+|Terminate process|`kill PID`|
+|Force terminate|`kill -9 PID`|
+|Edit cron jobs|`crontab -e`|
+|List cron jobs|`crontab -l`|
+|Overwrite output|`>`|
+|Append output|`>>`|
+|Redirect errors|`2>`|
+
+---
+
+## 9. Interview Questions and Answers
+
+**Q1. What is a process?**
+
+A: A process is a program that is currently running.
+
+**Q2. What is PID?**
+
+A: PID is a unique identification number assigned to a process.
+
+**Q3. What is the difference between foreground and background processes?**
+
+A: A foreground process runs directly in the terminal. A background process runs without keeping the terminal busy.
+
+**Q4. What does Ctrl+Z do?**
+
+A: It suspends the foreground process.
+
+**Q5. What does the** `**bg**` **command do?**
+
+A: It resumes a suspended job in the background.
+
+**Q6. What does the** `**fg**` **command do?**
+
+A: It brings a background or suspended job to the foreground.
+
+**Q7. What is the default signal used by** `**kill**`**?**
+
+A: SIGTERM (15).
+
+**Q8. What is Cron?**
+
+A: Cron is a time-based job scheduler in Linux.
+
+**Q9. What is the purpose of** `**crontab -e**`**?**
+
+A: It allows users to edit scheduled cron jobs.
+
+**Q10. What is the difference between** `**>**` **and** `**>>**`**?**
+
+A: `>` overwrites a file, while `>>` appends content to a file.
+
+---
+
+## 10. Practice Questions
+
+Try answering these questions without looking at the notes.
+
+1. What is a process?
+    
+2. What is the difference between PID and PPID?
+    
+3. Which command displays all processes?
+    
+4. Which command displays live process information?
+    
+5. What is the purpose of `pstree`?
+    
+6. What does `&` do at the end of a command?
+    
+7. What is the difference between Ctrl+C and Ctrl+Z?
+    
+8. What is the purpose of `bg`?
+    
+9. What is the purpose of `fg`?
+    
+10. What does `kill -9 1500` do?
+    
+11. What is Cron?
+    
+12. Which command edits cron jobs?
+    
+13. What does `*/5 * * * *` mean?
+    
+14. Write a cron expression to run a script every day at 2:00 AM.
+    
+15. What is the difference between `>` and `>>`?
+    
+16. What does `2>&1` mean?
+    
+
+**Remember:** Practice these commands in Ubuntu. Linux becomes easier when you understand each command and use it yourself.
